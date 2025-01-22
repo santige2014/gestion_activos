@@ -33,4 +33,5 @@ def exportar_excel():
     return send_file(filename, as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 10000))  # Render asigna automáticamente un puerto
+    app.run(host="0.0.0.0", port=port)  # Asegura que se ejecute en Render
